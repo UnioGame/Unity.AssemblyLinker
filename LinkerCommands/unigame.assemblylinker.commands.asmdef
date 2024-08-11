@@ -1,0 +1,22 @@
+{
+    "name": "unigame.assemblylinker.commands",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f0321ba97c62c974b82a7fc7c1d544f9",
+        "GUID:2796129a6c23eb84a8181f62bf7332f1",
+        "GUID:e49e0b7c720612f4bb42d5892ac8beb1"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNIGAME_BUILDPIPELINE"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

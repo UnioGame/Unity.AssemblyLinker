@@ -1,14 +1,15 @@
 {
-  "name": "com.unigame.modules.assembles",
+  "name": "com.unigame.assemblylinker",
   "author": "UniGame",
-  "displayName": "UniGame Modules Assembles",
-  "description": "Collection of All base UnioGame Modules",
+  "displayName": "Game Assembly Linker",
+  "description": "link.xml Assembly linker",
   "unity": "2022.1",
-  "version": "2023.0.0",
+  "version": "2024.0.0",
   "keywords": [
     "UniGame",
-    "Modules",
-    "Tools"
+    "Linker",
+    "Assembly",
+    "Striping"
   ],
   "homepage": "https://github.com/UniGameTeam/UniModules#readme",
   "dependencies": {

@@ -10,5 +10,6 @@
         public bool preserveAllAssemblies;
         public List<AssemblyData> assemblyNames;
         public List<string> preservedAssemblies;
+        public List<string> preservedTypes;
     }
 }

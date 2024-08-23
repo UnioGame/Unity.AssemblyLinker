@@ -15,10 +15,18 @@ namespace Game.Editor.Linker
     [CreateAssetMenu(menuName = "Game/AssemblyLinker/AssemblyLinkerAsset", fileName = "AssemblyLinkerAsset")]
     public class AssemblyLinkerAsset : ScriptableObject
     {
+        private const string PreserveInfo = "preserve info";
+        private const string PreserveRules = "preserve rules";
+        
+        [BoxGroup(PreserveRules)]
         public bool preserveAllAssemblies = false;
+        [BoxGroup(PreserveRules)]
         public List<string> preservedAssembliesRules = new();
-
+        [BoxGroup(PreserveRules)]
+        public List<string> preserveTypesRules = new();
+        
 #if ODIN_INSPECTOR
+        [BoxGroup(PreserveInfo)]
         [Searchable(FilterOptions = SearchFilterOptions.ISearchFilterableInterface)]
         [ListDrawerSettings(ListElementLabelName = "@assemblyName")]
 #endif
@@ -26,6 +34,7 @@ namespace Game.Editor.Linker
 
 #if ODIN_INSPECTOR
         [PropertySpace]
+        [BoxGroup(PreserveInfo)]
         [ListDrawerSettings(ListElementLabelName = "@assemblyName")]
         [Searchable(FilterOptions = SearchFilterOptions.ISearchFilterableInterface)]
 #endif
@@ -33,6 +42,7 @@ namespace Game.Editor.Linker
 
 #if ODIN_INSPECTOR
         [PropertyOrder(-1)]
+        [BoxGroup(PreserveRules)]
         [Button(icon:SdfIconType.CollectionFill)]
 #endif
         public void CollectAssemblies()
@@ -74,6 +84,7 @@ namespace Game.Editor.Linker
 
 #if ODIN_INSPECTOR
         [PropertyOrder(-1)]
+        [BoxGroup(PreserveRules)]
         [Button(SdfIconType.Activity)]
 #endif
         public void ApplyPreserveAssemblies()
@@ -86,6 +97,7 @@ namespace Game.Editor.Linker
                 preservedAssemblies = preservedAssembliesRules,
                 preserveAllAssemblies = preserveAllAssemblies,
                 linkXmlPath = $"{Application.dataPath}/link.xml",
+                preservedTypes = preserveTypesRules,
             };
             var generator = new LinkXmlGenerator(linkGeneratorData);
             

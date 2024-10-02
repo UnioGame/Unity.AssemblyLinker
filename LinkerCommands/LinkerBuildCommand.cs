@@ -7,7 +7,7 @@
     using UniModules.UniGame.UniBuild.Editor.ClientBuild.Commands.PreBuildCommands;
 
     [Serializable]
-    public class LinerBuildCommand : SerializableBuildCommand
+    public class LinkerBuildCommand : SerializableBuildCommand
     {
         public override void Execute(IUniBuilderConfiguration buildParameters)
         {
